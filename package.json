@@ -1,0 +1,17 @@
+{
+  "name": "opunguriru",
+  "version": "1.0.0",
+  "description": "Entry for the GDG Düsseldorf Summer Fun Challenge",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FedericoElles/opunguriru.git"
+  },
+  "author": "Fritz + Alex",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.3",
+    "express-all-inclusive": "^1.0.0",
+    "express-useragent": "^0.1.8"
+  }
+}

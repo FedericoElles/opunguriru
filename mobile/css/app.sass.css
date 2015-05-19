@@ -1,0 +1,65 @@
+
+
+$highlight-color: #e91e63;
+$muted-color: grey;
+$error-color: red;
+
+@mixin transition($radius) {
+  -webkit-transition: $radius;
+     -moz-transition: $radius;
+      -ms-transition: $radius;
+          transition: $radius;
+}
+
+/*start*/
+
+html {
+}
+
+body {
+  font-family: 'Roboto', 'Helvetica Neue', 'Segoe UI' sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  min-height:88vh;
+}
+
+muted {
+  color: $muted-color;
+}
+
+
+p.error{
+  color:$error-color
+}
+
+p.record {
+  margin-bottom: 1.5rem;
+}
+
+hr.small{
+  margin-top: 0rem;
+  margin-bottom: 1.5rem;
+}
+
+
+.pre {
+  white-space: pre; 
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+
+h6 {
+  text-transform: uppercase;
+  border-bottom: 1px solid $highlight-color;
+  margin-bottom: 0.5rem;
+  margin-top: 2rem;
+}
+
+.footer {
+  text-align: center;
+  font-size: 70%;
+  color:$muted-color;
+}

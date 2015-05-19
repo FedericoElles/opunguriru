@@ -1,0 +1,20 @@
+CACHE MANIFEST
+# Generated: <!--version-->
+
+
+CACHE:
+
+# CDN
+
+# JS Libs
+http://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.4/hammer.min.js
+http://cdn.jsdelivr.net/riot/2.0.12/riot.min.js
+
+# App
+index.html
+
+# Images
+img/favicon.png
+
+NETWORK:
+*

@@ -1,0 +1,65 @@
+
+<!doctype html>
+<html manifest="cache.appcache">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="img/ic_launcher_192.png">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1"/>
+  <meta name="viewport" content="width=device-width"/>
+  <head>
+    <title>FamilyNavi</title>
+  </head>
+
+  <!--reload-->
+
+  <body>
+    <div id="splashscreen" class="section" style="position:fixed;top:0px;bottom:0px;left:0px;right:0px;background-color:white;z-index:9999">
+      <div class="center">
+        <img src="/img/ic_launcher_144.png">
+        <h4>Family Navi<br>
+        <muted>Düsseldorf</muted></h4>
+      </div>
+      <splashscreen id="tag_splashscreen"></splashscreen>
+
+
+    </div>
+
+    <navbar id="tag_navbar" title="Family Navi" subtitle="Düsseldorf" icon="/img/ic_launcher_144.png" config={navbar}></navbar>
+    <sidemenu id="tag_sidemenu" title="Navigation" open={false}>
+      <a class="button" href="#main">Startseite</a>
+      <a class="button" href="#cats">In der Nähe</a>
+      <a class="button" href="#emergency">Notfall</a>
+      <a class="button divided" href="#about">Über</a>
+      <a class="button" href="#imprint">Impressum</a>
+    </sidemenu>
+    <app id="layout"></app>
+    <p class="footer">v<!--version--></p>
+    <link href="/css/normalize.css" rel="stylesheet">
+    <link href="/css/skeleton.css" rel="stylesheet">
+    <link href="/css/app.sass.css" rel="stylesheet">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.4/hammer.min.js"></script>
+    <script src="//cdn.jsdelivr.net/riot/2.0.15/riot.min.js"></script>
+    <script src="/libs/geolocator.js"></script>
+    <script src="/libs/geo.js"></script>
+    <script src="/libs/ls.js"></script>
+    <script src="/libs/api.js"></script>
+    <script src="/libs/emergency.js"></script>
+
+    <script src="/tags/fn-location.js"></script>
+
+    <script src="/tags/german-date.js"></script>
+    <script src="/tags/text-trunc.js"></script>
+    <script src="/tags/phone.js"></script>
+    <script src="/tags/sidemenu.js"></script>
+    <script src="/tags/navbar.js"></script>
+    <script src="/tags/splashscreen.js"></script>
+    <script src="/tags/app.js"></script>
+
+    
+
+
+    <script>
+    riot.mount('app', {}); //opts
+    </script>
+  </body>
+</html>

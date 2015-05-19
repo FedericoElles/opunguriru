@@ -1,0 +1,35 @@
+
+<!doctype html>
+<html manifest="cache.appcache">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="img/favicon.png">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1"/>
+  <meta name="viewport" content="width=device-width"/>
+  <head>
+    <title>Mobile App</title>
+  </head>
+
+  <!--reload-->
+
+  <body>
+
+    <app id="layout"></app>
+    <p class="footer">v<!--version--></p>
+    <link href="/mobile/css/normalize.css" rel="stylesheet">
+    <link href="/mobile/css/skeleton.css" rel="stylesheet">
+    <link href="/mobile/css/app.sass.css" rel="stylesheet">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.4/hammer.min.js"></script>
+    <script src="//cdn.jsdelivr.net/riot/2.0.15/riot.min.js"></script>
+    <script src="/mobile/libs/geolocator.js"></script>
+    <script src="/mobile/libs/geo.js"></script>
+    <script src="/mobile/libs/api.js"></script>
+    <script src="/mobile/libs/ls.js"></script>
+    <script src="/mobile/tags/app.js"></script>
+
+    
+    <script>
+    riot.mount('app', {}); //opts
+    </script>
+  </body>
+</html>
