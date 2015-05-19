@@ -1,6 +1,6 @@
 
 <div class="section">
-  <div class="container">Demo Mobile Application</div>
+  <div class="container">OpenGrill</div>
 </div>
 
 <div class="section">
@@ -15,26 +15,74 @@
 
   <div class="container" if={page == 'main'}>
 
-
-    <h6>Main</h6>
-  
-   
-    <a class="button u-full-width" href="#route1">
-      Route 1</a>
-    <a class="button u-full-width" href="#route2_id/666">
-      Route 2</a>
+    <h6>Main menu</h6>
+     
+    <a class="button u-full-width" href="#notifications">
+      Notification settings</a>
+    <a class="button u-full-width" href="#submit">
+      Submit open grill</a>
+    <a class="button u-full-width" href="#nearby">
+      Open grills nearby</a>
 
   </div>
 
 
 
-  <div class="container" if={page == 'route1'}>
-    <h6>Route 1</h6>
+<!--   ██╗ ██████╗ ████████╗██╗███████╗██╗   ██╗
+████╗  ██║██╔═══██╗╚══██╔══╝██║██╔════╝╚██╗ ██╔╝
+██╔██╗ ██║██║   ██║   ██║   ██║█████╗   ╚████╔╝ 
+██║╚██╗██║██║   ██║   ██║   ██║██╔══╝    ╚██╔╝  
+██║ ╚████║╚██████╔╝   ██║   ██║██║        ██║   
+╚═╝  ╚═══╝ ╚═════╝    ╚═╝   ╚═╝╚═╝        -->
+                                                
+  <div class="container" if={page == 'notifications'}>
+    <h6>Notification settings</h6>
   
    
     <a class="button u-full-width" href="javascript:window.history.back()">
       Back</a>
   </div>
+
+
+<!--███╗██╗   ██╗██████╗ ███╗   ███╗██╗████████╗
+██╔════╝██║   ██║██╔══██╗████╗ ████║██║╚══██╔══╝
+███████╗██║   ██║██████╔╝██╔████╔██║██║   ██║   
+╚════██║██║   ██║██╔══██╗██║╚██╔╝██║██║   ██║   
+███████║╚██████╔╝██████╔╝██║ ╚═╝ ██║██║   ██║   
+╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝   --> 
+                                                
+  <div class="container" if={page == 'submit'}>
+    <h6>Submit open grill</h6>
+  
+   
+    <a class="button u-full-width" href="javascript:window.history.back()">
+      Back</a>
+  </div>
+
+
+<!--╗   ██╗███████╗ █████╗ ██████╗ ██████╗ ██╗   ██╗
+████╗  ██║██╔════╝██╔══██╗██╔══██╗██╔══██╗╚██╗ ██╔╝
+██╔██╗ ██║█████╗  ███████║██████╔╝██████╔╝ ╚████╔╝ 
+██║╚██╗██║██╔══╝  ██╔══██║██╔══██╗██╔══██╗  ╚██╔╝  
+██║ ╚████║███████╗██║  ██║██║  ██║██████╔╝   ██║   
+╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝    -->
+                                                   
+  <div class="container" if={page == 'nearby'}>
+    <h6>Open grills nearby</h6>
+  
+   
+    <a class="button u-full-width" href="javascript:window.history.back()">
+      Back</a>
+  </div>
+
+
+
+<!--██╗ ███████╗████████╗ █████╗ ██╗██╗     
+██╔══██╗██╔════╝╚══██╔══╝██╔══██╗██║██║     
+██║  ██║█████╗     ██║   ███████║██║██║     
+██║  ██║██╔══╝     ██║   ██╔══██║██║██║     
+██████╔╝███████╗   ██║   ██║  ██║██║███████╗
+╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚════-->
 
 
   <div class="container" if={page == 'route2_id'}>
@@ -48,14 +96,12 @@
 
 
 
-<!--
-██╗███╗   ███╗██████╗ ██████╗ ██╗███╗   ██╗████████╗
+<!--██╗   ███╗██████╗ ██████╗ ██╗███╗   ██╗████████╗
 ██║████╗ ████║██╔══██╗██╔══██╗██║████╗  ██║╚══██╔══╝
 ██║██╔████╔██║██████╔╝██████╔╝██║██╔██╗ ██║   ██║   
 ██║██║╚██╔╝██║██╔═══╝ ██╔══██╗██║██║╚██╗██║   ██║   
 ██║██║ ╚═╝ ██║██║     ██║  ██║██║██║ ╚████║   ██║   
-╚═╝╚═╝     ╚═╝╚═╝     ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝   ╚═╝   
--->
+╚═╝╚═╝     ╚═╝╚═╝     ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝   -->
 
 
 
