@@ -37,6 +37,42 @@
                                                 
   <div class="container" if={page == 'notifications'}>
     <h6>Notification settings</h6>
+
+    <form onsubmit={ updateNotifications }>
+
+
+      <label for="nf_numRange">Range</label>
+      <select class="u-full-width" id="nf_numRange">
+        <option value="5">5 km</option>
+        <option value="10">10 km</option>
+        <option value="20">20 km</option>
+        <option value="-1">Whatever</option>
+      </select>
+
+      <label>Notify me on</label>
+      <label>
+        <input id="nf_flagNotifyWorkdayEvening" type="checkbox">
+        <span>Mo - Fr evening</span>
+      </label>
+      <label>
+        <input id="nf_flagNotifySaturday" type="checkbox">
+        <span>Saturdays</span>
+      </label>
+      <label>
+        <input id="nf_flagNotifySunday" type="checkbox">
+        <span>Sundays</span>
+      </label>
+      <label>
+        <input id="nf_flagNotifyHoliday" type="checkbox">
+        <span>Holidays</span>
+      </label>    
+
+      <label for="nf_email">Your email</label>
+      <input class="u-full-width" type="email" placeholder="test@mailbox.com" id="nf_email" required>
+    
+      <input if={nf.available} class="button-primary u-full-width" type="submit" value="Update">
+      <input if={!nf.available} class="button-primary u-full-width" type="submit" value="Subscribe">      
+    </form>
   
    
     <a class="button u-full-width" href="javascript:window.history.back()">
@@ -53,7 +89,9 @@
                                                 
   <div class="container" if={page == 'submit'}>
     <h6>Submit open grill</h6>
-  
+
+
+
    
     <a class="button u-full-width" href="javascript:window.history.back()">
       Back</a>

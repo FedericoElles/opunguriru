@@ -14,7 +14,7 @@
 
   //LOAD MODULES
   var geo = new Geo();
-  var ls = new LS();
+  var ls = new LS('opengrill');
   var api = new Api(ls);
   
 
@@ -131,7 +131,7 @@
     updateSelf.call(null, arguments);
   });
 
-  
+  updateSelf();
 
   function onGeoSuccess(location) {
       console.log('GPS OK');
@@ -162,5 +162,74 @@
   }
   updateGeo();
 
+  //Submit Forms
 
-  
+  function tags2obj(prefix){
+    var obj = {};
+    var name;
+    var value;
+    var tag;
+    for (x in self){
+      if (x.substr(0, prefix.length) === prefix){
+        name = x.substr(prefix.length+1);
+        tag = self[x];
+
+        switch (tag.type){
+          case 'checkbox':
+            value = tag.checked;
+            break;
+          default:
+            value = tag.value;
+        }
+
+        if (name.substr(0,3) === 'num'){
+          value = parseInt(value, 10);
+        }
+
+        obj[name]  = value;
+      }
+    }
+    return obj;
+  }
+
+  function obj2tags(prefix, obj){
+    var name;
+    var value;
+    var tag;
+    for (x in obj){
+      name = prefix + '_' + x;
+      tag = self[name];
+
+      switch (tag.type){
+        case 'checkbox':
+          tag.checked = obj[x];
+          break;
+        default:
+          tag.value = obj[x];
+      }
+    }
+    self.update();
+  }
+
+
+
+  //notifications
+  self.nf = {
+    available: false
+  };
+
+  //load settings on app start
+  var notificationSettings = ls.get('nf');
+  if (notificationSettings) {
+    self.nf.available = true;
+    obj2tags('nf', notificationSettings);
+    console.log('nf', notificationSettings);
+  }
+
+  //update/ save button
+  self.updateNotifications = function(){
+    var json = tags2obj('nf');
+    ls.set('nf', json);
+    self.nf.available = true;
+    console.log('Submitting JSON', json);
+  }
