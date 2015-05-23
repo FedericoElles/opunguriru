@@ -138,6 +138,7 @@
       self.features.gps.available = true;
       self.features.gps.ready = true;
       self.location = location;
+      onLocationAvailable(); //notify notification settings about change
       self.update();
       console.log(location);
 
@@ -183,8 +184,8 @@
         }
 
         if (name.substr(0,3) === 'num'){
-          value = parseInt(value, 10);
-        }
+          value = parseFloat(value, 10);
+        }    
 
         obj[name]  = value;
       }
@@ -200,12 +201,14 @@
       name = prefix + '_' + x;
       tag = self[name];
 
-      switch (tag.type){
-        case 'checkbox':
-          tag.checked = obj[x];
-          break;
-        default:
-          tag.value = obj[x];
+      if (tag){
+        switch (tag.type){
+          case 'checkbox':
+            tag.checked = obj[x];
+            break;
+          default:
+            tag.value = obj[x];
+        }
       }
     }
     self.update();
@@ -215,7 +218,8 @@
 
   //notifications
   self.nf = {
-    available: false
+    available: false,
+    newLocation: false
   };
 
   //load settings on app start
@@ -224,6 +228,26 @@
     self.nf.available = true;
     obj2tags('nf', notificationSettings);
     console.log('nf', notificationSettings);
+  }
+
+
+
+  self.updateLocation = function(){
+    self.nf_locationText.value = self.location.formattedAddress;
+    self.nf_numLocationLat.value = self.location.coords.latitude;
+    self.nf_numLocationLng.value = self.location.coords.longitude;
+    self.nf.newLocation  = false;
+  }
+
+  //if location gets available
+  function onLocationAvailable(){
+    if (!self.nf_locationText.value){
+      self.updateLocation();
+    } else {
+      if (self.nf_locationText.value !== self.location.formattedAddress){
+        self.nf.newLocation  = true;
+      }
+    }
   }
 
   //update/ save button

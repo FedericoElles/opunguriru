@@ -40,6 +40,19 @@
 
     <form onsubmit={ updateNotifications }>
 
+      <label>Location</label>
+
+      <p if={nf.newLocation}>
+        New location detected: <br>
+        {location.formattedAddress}
+        <button class="u-full-width" onclick={updateLocation}>Make default</button>
+      </p>
+
+      <input class="u-full-width" type="text" placeholder="Acquiring Location..." id="nf_locationText" readonly required>
+
+      <input class="u-full-width" type="text" placeholder="Acquiring Lat..." id="nf_numLocationLat" readonly required>
+
+      <input class="u-full-width" type="text" placeholder="Acquiring Lng..." id="nf_numLocationLng" readonly required>      
 
       <label for="nf_numRange">Range</label>
       <select class="u-full-width" id="nf_numRange">
