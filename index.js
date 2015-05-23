@@ -132,13 +132,17 @@ app.get('/', function(req, res) {
     //mobile app
     allinc.mobile.serve(req, res, {
       include: [
-      '/mobile/libs/geolocator.js',
+      '/libs/geolocator.js',
+      '/libs/geo.js',
+      '/libs/api.js',
+      '/libs/ls.js',
       //custom
-      //reusable
-      '/mobile/tags/app.js',
-      '/mobile/css/normalize.css', 
-      '/mobile/css/skeleton.css', 
-      '/mobile/css/app.sass.css'
+      '/tags/app.js',
+      //reusable      
+      //css
+      '/css/normalize.css', 
+      '/css/skeleton.css', 
+      '/css/app.sass.css'
       ]
     });    
   }
