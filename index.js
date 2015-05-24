@@ -2,14 +2,20 @@
 
 
 //import modules
+var compression = require('compression');
 var path = require('path');
 var express = require('express');
 var useragent = require('express-useragent');
 var allinc = require('express-all-inclusive');
+var bodyParser = require('body-parser');
+
 
 //temporary local module, move to lib once ready
 var simplePostgres = require('./simple-postgres');
 var sorated = require('./sorated');
+
+
+simplePostgres.setUrl(process.env.DATABASE_URL || '');
 
 
 //variables
@@ -29,6 +35,8 @@ app.set('port', (process.env.PORT || 5000));
 //express middleware
 app.use(useragent.express());
 
+// compress all requests
+app.use(compression());
 
 
 //set correct header for all API calls
@@ -38,6 +46,13 @@ app.use(useragent.express());
   }
   next();
 });
+
+
+
+/**
+ * MIDDLEWARE CONFIG
+ */
+app.use(bodyParser.json({limit:1024*1024*1}));
 
 
 /*

@@ -256,4 +256,7 @@
     ls.set('nf', json);
     self.nf.available = true;
     console.log('Submitting JSON', json);
+    api.postJSON('subscribe', json, function(data){
+      console.log('result', data);
+    })
   }

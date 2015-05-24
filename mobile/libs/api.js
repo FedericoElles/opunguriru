@@ -5,6 +5,24 @@
 function Api(ls){
   var api = {};
 
+
+  api.postJSON = function(endpoint, data, cb){
+    var r = new XMLHttpRequest();
+    
+
+    r.open("POST", '/api/' + endpoint, true);
+    r.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+    r.onreadystatechange = function () {
+      if (r.readyState != 4 || r.status != 200) return;
+      console.log("Success: " + r.responseText);
+      if (cb){
+        cb(JSON.parse(r.responseText));
+      }
+    };
+    r.send(JSON.stringify(data));
+  }
+
+
   api.fetchJSON = function(endpoint, cb){
     //check if cached version available
     var lsKey = 'api.' + endpoint;

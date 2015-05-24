@@ -10,9 +10,12 @@
   "author": "Fritz + Alex",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.12.4",
+    "compression": "^1.4.4",
     "express": "^4.12.3",
     "express-all-inclusive": "^1.0.0",
     "express-useragent": "^0.1.8",
-    "pg": "^4.3.0"
+    "pg": "^4.3.0",
+    "q": "^1.4.1"
   }
 }
