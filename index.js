@@ -7,6 +7,10 @@ var express = require('express');
 var useragent = require('express-useragent');
 var allinc = require('express-all-inclusive');
 
+//temporary local module, move to lib once ready
+var simplePostgres = require('./simple-postgres');
+var sorated = require('./sorated');
+
 
 //variables
 var app = express();
@@ -102,7 +106,17 @@ app.use(function(req, res, next) {
 ██║  ██║██║     ██║
 ╚═╝  ╚═╝╚═╝     ╚*/
 
+var rateSubscribe = sorated.RateLimit('subscribe', {max:{minute:3, hour: 10, day: 20}});
 
+
+//API USER REGISTER
+app.post('/api/subscribe', rateSubscribe, function(req, res) {
+  res.send(STATIC.OK);
+  simplePostgres.simpleInsert('subscriptions_staging', {
+    email:  req.param('email') || 'unknown',
+    data: req.param('data') || ''
+  });
+});
 
 
 
