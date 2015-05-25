@@ -15,7 +15,7 @@ var simplePostgres = require('./simple-postgres');
 var sorated = require('./sorated');
 
 
-simplePostgres.setUrl(process.env.DATABASE_URL || '');
+simplePostgres.setUrl(process.env.DATABASE_URL || '' );
 
 
 //variables
@@ -161,17 +161,17 @@ app.get('/', function(req, res) {
     //mobile app
     allinc.mobile.serve(req, res, {
       include: [
-      '/libs/geolocator.js',
-      '/libs/geo.js',
-      '/libs/api.js',
-      '/libs/ls.js',
+      '/mobile/libs/geolocator.js',
+      '/mobile/libs/geo.js',
+      '/mobile/libs/api.js',
+      '/mobile/libs/ls.js',
       //custom
-      '/tags/app.js',
+      '/mobile/tags/app.js',
       //reusable      
       //css
-      '/css/normalize.css', 
-      '/css/skeleton.css', 
-      '/css/app.sass.css'
+      '/mobile/css/normalize.css', 
+      '/mobile/css/skeleton.css', 
+      '/mobile/css/app.sass.css'
       ]
     });    
   }
