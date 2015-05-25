@@ -15,7 +15,9 @@ var simplePostgres = require('./simple-postgres');
 var sorated = require('./sorated');
 
 
-simplePostgres.setUrl(process.env.DATABASE_URL || '' );
+simplePostgres.setUrl(process.env.DATABASE_URL || 
+  'postgres://'+process.argv[2]+'@ec2-54-247-79-142.eu-west-1.compute.amazonaws.com:5432/dhpjorquuk3uk?ssl=true'
+);
 
 
 //variables
@@ -128,8 +130,8 @@ var rateSubscribe = sorated.RateLimit('subscribe', {max:{minute:3, hour: 10, day
 app.post('/api/subscribe', rateSubscribe, function(req, res) {
   res.send(STATIC.OK);
   simplePostgres.simpleInsert('subscriptions_staging', {
-    email:  req.param('email') || 'unknown',
-    data: req.param('data') || ''
+    email:  req.body.email || 'unknown',
+    data: JSON.stringify(req.body) || '{}'
   });
 });
 
