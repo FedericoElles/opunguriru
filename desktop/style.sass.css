@@ -4,9 +4,10 @@
   /* Colors
   ----------------------------------------- */
   $highlight-color: white;
-  $text-inverse: #ff8f14;
   $muted-color: #dcc094;
   $important-color: #761602;
+  $text-highlight: #ff8f14;
+  $text-inverse: #ff8f14;
   $text-dark: #0e0f0e;
 
 
@@ -20,18 +21,16 @@
     color: $text-inverse;
     font-family: 'Alegreya', serif;
     margin: 0px;
+    overflow: hidden;
   }
 
 
   /* Fonts
   ----------------------------------------- */
   h1 {
-    color: $highlight-color;
+    letter-spacing: 0;
   }
-  small{
-    color:$muted-color;
-    font-size: 70%;
-  }
+
 
   /* Background
   ----------------------------------------- */
@@ -60,4 +59,43 @@
       background-position: -30vw 40vh;
       background-size: cover;
     }
+  }
+
+
+  /* open grill logo
+  ----------------------------------------- */
+  .og-logo {
+
+    h1 {
+      color: $text-highlight;
+      font-family: 'Alegreya SC', serif;
+      line-height: 0.6em;
+      margin: 0;
+    }
+  }
+  @media (orientation: portrait) {
+    .og-logo {
+      background: transparent url("../img/og-logo_yellow.svg") no-repeat scroll top left;
+      background-size: 20vw 20vw;
+      height: 60vw;
+      margin-left: 10vw;
+      margin-top: 24vh;
+      width: 80vw;
+
+      h1 {
+        font-size: 16vw;
+        font-weight: 900;
+        margin-left: 24vw;
+
+        span  {
+          margin-left: -4vw
+        }
+        small {
+          font-weight: 400;
+          font-size: 40%;
+        }
+      }
+    }
+  }
+  @media (orientation: landscape) {
   }
