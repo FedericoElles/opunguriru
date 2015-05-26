@@ -24,7 +24,7 @@ simplePostgres.setUrl(process.env.DATABASE_URL ||
 var app = express();
 var localhost = process.env.PORT ? false : true; //heroku specific
 var STATIC = {
-  version: '0.0.1',
+  version: '0.0.2',
   OK: {status: 'OK'},
   fail: function(msg){
     return {status: 'ERROR', reason: msg};

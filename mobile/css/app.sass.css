@@ -34,6 +34,7 @@ $error-color: red;
   color: #FFF;
   background-color: $highlight-color;
   border-color: $highlight-color;
+  border: 1px solid $black;
 }
 
 .button, button, input[type="submit"], input[type="reset"], input[type="button"] {
@@ -42,7 +43,7 @@ $error-color: red;
   border: 1px solid $black;
 }
 
-input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea {
+select, input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea {
   background-color: $darkred;
   color: $white;
   border: 1px solid $black;
@@ -55,18 +56,19 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
 
 
 html {
+  background-color: $darkred; 
+  @include linear-gradient($darkred, $black);
+  height: 100%;
 }
 
 body {
   font-family: 'Roboto', 'Helvetica Neue', 'Segoe UI' sans-serif;
   font-style: normal;
   font-weight: 300;
-  min-height:84vh;
   margin-top: 80px;
   color:$white;
 
-  background-color: $darkred; 
-  @include linear-gradient($darkred, $black);
+
 }
 
 muted {
@@ -103,6 +105,20 @@ h6 {
   margin-bottom: 0.5rem;
   margin-top: 2rem;
 }
+
+/* background fire */
+
+#red-yellow{
+  width: 100%;
+  position:fixed;
+  left:-50%;
+  bottom:-40%;
+  z-index: -1;
+}
+
+
+
+/* footer */
 
 .footer {
   text-align: center;
