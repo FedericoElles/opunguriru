@@ -1,6 +1,6 @@
 
 
-$highlight-color: green;
+$highlight-color: #FF8F14;;
 $muted-color: grey;
 $error-color: red;
 
@@ -62,4 +62,23 @@ h6 {
   text-align: center;
   font-size: 70%;
   color:$muted-color;
+}
+
+/* header */
+
+#header {
+  padding:10px;
+  color: $highlight-color;
+
+  h1 {
+    display: inline-block;
+    line-height: 50px;
+    margin-bottom: 0px;
+    vertical-align: top;
+    padding-left: 10px;
+  }
+
+  svg {
+    width: 50px;
+  }
 }
