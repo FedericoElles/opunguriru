@@ -36,6 +36,17 @@ $error-color: red;
   border-color: $highlight-color;
 }
 
+.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+  background-color: $darkred;
+  color: $white;
+  border: 1px solid $black;
+}
+
+input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea {
+  background-color: $darkred;
+  color: $white;
+  border: 1px solid $black;
+}
 
 
 /*start*/
@@ -50,7 +61,7 @@ body {
   font-family: 'Roboto', 'Helvetica Neue', 'Segoe UI' sans-serif;
   font-style: normal;
   font-weight: 300;
-  min-height:88vh;
+  min-height:84vh;
   margin-top: 80px;
   color:$white;
 
