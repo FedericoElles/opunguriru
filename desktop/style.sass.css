@@ -1,158 +1,164 @@
 /* SASS Support Available */
-
-
-  /* Colors
+/* Colors
   ----------------------------------------- */
-  $highlight-color: white;
-  $muted-color: #dcc094;
-  $important-color: #761602;
-  $text-highlight: #ff8f14;
-  $text-inverse: #ff8f14;
-  $text-dark: #0e0f0e;
 
+$highlight-color: white;
+$muted-color: #dcc094;
+$important-color: #761602;
+$text-highlight: #ff8f14;
+$text-inverse: #ff8f14;
+$text-dark: #0e0f0e;
 
-  /* Main Layout
+/* Main Layout
   ----------------------------------------- */
-  html, body {
+
+html,
+body {
     height: 100%;
-  }
-  body {
+}
+
+body {
     background: linear-gradient(145deg, $text-dark, $text-dark 40%, $important-color);
     color: $text-inverse;
     font-family: 'Alegreya', serif;
     margin: 0px;
     overflow: hidden;
-  }
+}
 
 
-  /* Fonts
-  ----------------------------------------- */
-  h1 {
+/* Fonts
+----------------------------------------- */
+
+h1 {
     letter-spacing: 0;
-  }
+}
 
 
-  /* Background
-  ----------------------------------------- */
-  .bg1 {
+/* Background
+----------------------------------------- */
+
+.bg1 {
     background: transparent url("../img/fire-bg.svg") no-repeat scroll;
     bottom: 0;
     left: 0;
     position: fixed;
     right: 0;
     top: 0;
-  }
-  @media (orientation: portrait) {
+}
+
+@media (orientation: portrait) {
     .bg1 {
-      background-position: -30vw 40vh;
-      background-size: cover;
+        background-position: -30vw 40vh;
+        background-size: cover;
     }
-  }
-  @media (orientation: landscape) {
+}
+
+@media (orientation: landscape) {
     .bg1 {
-      background-position: 80vh 0;
-      background-size: cover;
+        background-position: 80vh 0;
+        background-size: cover;
     }
-  }
+}
 
 
-  /* open grill logo
-  ----------------------------------------- */
-  .og-logo {
+/* Open grill logo
+----------------------------------------- */
+
+.og-logo {
     background: transparent url("../img/og-logo_yellow.svg") no-repeat scroll top left;
-    
     h1 {
-      color: $text-highlight;
-      font-family: 'Alegreya SC', serif;
-      font-weight: 900;
-      line-height: 0.6em;
-      margin: 0;
+        color: $text-highlight;
+        font-family: 'Alegreya SC', serif;
+        font-weight: 900;
+        line-height: 0.6em;
+        margin: 0;
     }
     h5 {
-      font-style: italic;
-      font-weight: 400;
+        font-style: italic;
+        font-weight: 400;
     }
-  }
-  @media (orientation: portrait) {
-    .og-logo {
-      background-size: 20vw 20vw;
-      height: 60vw;
-      margin-left: 10vw;
-      margin-top: 24vh;
-      width: 80vw;
-        
-      h1 {
-        font-size: 16vw;
-        margin-left: 24vw;
+}
 
-        span  {
-          margin-left: -4vw;
-        }
-        small {
-          font-weight: 400;
-          font-size: 40%;
-          margin-left: -10vw;
-        }
-      }
-      h5 {
-          font-size: 4vw;
-          margin-left: 14vw;
-      }
-    }
-  }
-  @media (orientation: landscape) {
+@media (orientation: portrait) {
     .og-logo {
-      background-size: 20vh 20vh;
-      height: 60vh;
-      margin-left: 10vh;
-      margin-top: 24vh;
-      width: 80vh;
-        
-      h1 {
-        font-size: 16vh;
-        margin-left: 24vh;
-        span  {
-          margin-left: -4vh;
+        background-size: 20vw 20vw;
+        height: 60vw;
+        margin-left: 10vw;
+        margin-top: 24vh;
+        width: 80vw;
+        h1 {
+            font-size: 16vw;
+            margin-left: 24vw;
+            span {
+                margin-left: -4vw;
+            }
+            small {
+                font-weight: 400;
+                font-size: 40%;
+                margin-left: -10vw;
+            }
         }
-        small {
-          font-weight: 400;
-          font-size: 40%;
-          margin-left: -10vh;
+        h5 {
+            font-size: 4vw;
+            margin-left: 14vw;
         }
-      }
-      h5 {
-          font-size: 4vh;
-          margin-left: 14vh;
-      }
     }
-  }
+}
 
-  /* Footer
-  ----------------------------------------- */
-  .footer {
-      color: $muted-color;
-      font-size: 10px;
-  }
-  @media (orientation: portrait) {
-      .footer {
-          bottom: 3vw;
-          left: 24vw;
-          position: fixed;
-          
-          span {
-              display: block;
-          }
-      }
-  }
-  @media (orientation: landscape) {
-      .footer {
-          bottom: 3vh;
-          left: 24vh;
-          position: fixed;
-          
-          span {
+@media (orientation: landscape) {
+    .og-logo {
+        background-size: 20vh 20vh;
+        height: 60vh;
+        margin-left: 10vh;
+        margin-top: 24vh;
+        width: 80vh;
+        h1 {
+            font-size: 16vh;
+            margin-left: 24vh;
+            span {
+                margin-left: -4vh;
+            }
+            small {
+                font-weight: 400;
+                font-size: 40%;
+                margin-left: -10vh;
+            }
+        }
+        h5 {
+            font-size: 4vh;
+            margin-left: 14vh;
+        }
+    }
+}
+
+
+/* Footer
+----------------------------------------- */
+
+.footer {
+    color: $muted-color;
+    font-size: 10px;
+}
+
+@media (orientation: portrait) {
+    .footer {
+        bottom: 3vw;
+        left: 24vw;
+        position: fixed;
+        span {
+            display: block;
+        }
+    }
+}
+
+@media (orientation: landscape) {
+    .footer {
+        bottom: 3vh;
+        left: 24vh;
+        position: fixed;
+        span {
             display: inline-block;
-              margin-right: 32px;
-          }
-      }
-  }
+            margin-right: 32px;
+        }
+    }
+}
