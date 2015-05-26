@@ -136,6 +136,15 @@ app.post('/api/subscribe', rateSubscribe, function(req, res) {
   });
 });
 
+//API FEEDBACK
+app.post('/api/feedback', rateSubscribe, function(req, res) {
+  res.send(STATIC.OK);
+  simplePostgres.simpleInsert('feedback_staging', {
+    email:  req.body.email || 'unknown',
+    msg: req.body.msg || 'unknown',
+    user_agent: req.headers['user-agent'] || 'not available'
+  });
+});
 
 
 /*█████╗████████╗ █████╗ ████████╗██╗ ██████╗

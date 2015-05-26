@@ -268,12 +268,10 @@
 
   <div class="container" if={page == 'feedback'}>
     <h6>Drop us a line</h6>
-    <form onsubmit={ sendFeedback }>
-
-
+    <form onsubmit={ submitFeedback }>
 
       <label for="fb_msg">Message</label>
-      <textarea class="u-full-width" placeholder="Hi Dave …" id="fb_msg"></textarea>
+      <textarea class="u-full-width" placeholder="Hi Fritz & Alex …" id="fb_msg" required></textarea>
 
       <label for="fb_email">Your email</label>
       <small>Optional: Only if you would like to receive a reply.</small>
@@ -287,6 +285,12 @@
       Back</a>    
   </div>  
 
+
+  <div class="container" if={page == 'feedback-success'}>
+    <p>Thank you for your message.</p>
+    <a class="button u-full-width" href="#main">
+      Back</a>    
+  </div>  
 
 <!--██╗   ███╗██████╗ ██████╗ ██╗███╗   ██╗████████╗
 ██║████╗ ████║██╔══██╗██╔══██╗██║████╗  ██║╚══██╔══╝

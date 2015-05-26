@@ -10,6 +10,11 @@
     data: {available: true, ready: false},
   };
 
+  self.ctrl = { 
+    fb: {
+      success: false
+    }
+  };
  
 
   //LOAD MODULES
@@ -22,13 +27,13 @@
 
 
   //load data from server
+  /*
   fetchData() {
     api.fetchJSON('data', function(json){
       self.data = json
       self.features.data.ready = true;
       updateSelf();
     });
-
   }
 
   function updateRecord(rec, lat, lng){
@@ -79,7 +84,7 @@
         }
       });
     }
-  }
+  }*/
 
 
   /**
@@ -109,8 +114,8 @@
     
 
     switch (arguments[0]){
-      case 'route1':
-        //do something on route 1
+      case 'feedback':
+        onEnterFeedback();
         break;
       case 'route2':
         if (self.params.id){
@@ -132,7 +137,6 @@
     updateSelf.call(null, arguments);
   });
 
-  updateSelf();
 
   function onGeoSuccess(location) {
       console.log('GPS OK');
@@ -208,5 +212,34 @@
     console.log('Submitting JSON', json);
     api.postJSON('subscribe', json, function(data){
       console.log('result', data);
-    })
+    });
   }
+
+
+  /* FEEDBACK */
+
+
+  //if feedback screen is entered
+  function onEnterFeedback(){
+    self.fb_msg.value = '';
+    self.fb_email.value = notificationSettings.email || '';
+    self.ctrl.fb.success = false;
+  }
+
+  //if feedback is submitted
+  self.submitFeedback = function(){
+    var json = helper.tags2obj(self, 'fb');
+    if (json.msg){
+      console.log('Submitting Feedback JSON', json);
+      api.postJSON('feedback', json, function(data){
+        console.log('result', data);
+        self.ctrl.fb.success = true;
+        location.hash='feedback-success';
+      });
+    }
+  }
+
+
+
+  //initial UI rendering / must be last statement
+  updateSelf();
