@@ -1,12 +1,17 @@
 /* SASS Support Available */
 
 
+  /* Colors
+  ----------------------------------------- */
   $highlight-color: white;
   $text-inverse: #ff8f14;
   $muted-color: #dcc094;
   $important-color: #761602;
   $text-dark: #0e0f0e;
 
+
+  /* Main Layout
+  ----------------------------------------- */
   html, body {
     height: 100%;
   }
@@ -17,16 +22,19 @@
     margin: 0px;
   }
 
+
+  /* Fonts
+  ----------------------------------------- */
   h1 {
     color: $highlight-color;
   }
-
   small{
     color:$muted-color;
     font-size: 70%;
   }
 
-  /* Section with backgroud image */
+  /* Background
+  ----------------------------------------- */
   .section-background{
     background-position: middle top;
     background-repeat: no-repeat;
