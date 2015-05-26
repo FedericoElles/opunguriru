@@ -131,7 +131,8 @@ app.post('/api/subscribe', rateSubscribe, function(req, res) {
   res.send(STATIC.OK);
   simplePostgres.simpleInsert('subscriptions_staging', {
     email:  req.body.email || 'unknown',
-    data: JSON.stringify(req.body) || '{}'
+    data: JSON.stringify(req.body) || '{}',
+    user_agent: req.headers['user-agent'] || 'not available'
   });
 });
 
@@ -167,6 +168,7 @@ app.get('/', function(req, res) {
       '/mobile/libs/geo.js',
       '/mobile/libs/api.js',
       '/mobile/libs/ls.js',
+      '/mobile/libs/ls.riothelper',
       //custom
       '/mobile/tags/app.js',
       //reusable      
