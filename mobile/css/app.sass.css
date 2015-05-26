@@ -1,6 +1,10 @@
 
 
-$highlight-color: #FF8F14;;
+$highlight-color: #FF8F14;
+$darkred: #761602;
+$black: #0e0f0e;
+$white: #FAFAFA;
+
 $muted-color: grey;
 $error-color: red;
 
@@ -9,6 +13,19 @@ $error-color: red;
      -moz-transition: $radius;
       -ms-transition: $radius;
           transition: $radius;
+}
+
+
+
+@mixin linear-gradient($fromColor, $toColor) {
+  background-color: $toColor; /* Fallback Color */
+  background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
+  background-image:     -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
+  background-image:      -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
+  background-image:         linear-gradient(top, $fromColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
 }
 
 /* skeletton overwrite */
@@ -34,6 +51,11 @@ body {
   font-style: normal;
   font-weight: 300;
   min-height:88vh;
+  margin-top: 80px;
+  color:$white;
+
+  background-color: $darkred; 
+  @include linear-gradient($darkred, $black);
 }
 
 muted {
@@ -80,6 +102,12 @@ h6 {
 /* header */
 
 #header {
+  position: fixed;
+  top:0px;
+  left:0px;
+  right: 0px;
+  z-index: 2;
+  background-color: rgba(118,22,2,0.8);
   padding:10px;
   color: $highlight-color;
 
