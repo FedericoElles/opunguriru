@@ -34,12 +34,6 @@
 
   /* Background
   ----------------------------------------- */
-  .section-background{
-    background-position: middle top;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-  }
-
   .bg1 {
     background: transparent url("../img/fire-bg.svg") no-repeat scroll;
     bottom: 0;
@@ -56,7 +50,7 @@
   }
   @media (orientation: landscape) {
     .bg1 {
-      background-position: -30vw 40vh;
+      background-position: 80vh 0;
       background-size: cover;
     }
   }
@@ -65,12 +59,16 @@
   /* open grill logo
   ----------------------------------------- */
   .og-logo {
-
     h1 {
       color: $text-highlight;
       font-family: 'Alegreya SC', serif;
+      font-weight: 900;
       line-height: 0.6em;
       margin: 0;
+    }
+    h5 {
+      font-style: italic;
+      font-weight: 400;
     }
   }
   @media (orientation: portrait) {
@@ -81,10 +79,8 @@
       margin-left: 10vw;
       margin-top: 24vh;
       width: 80vw;
-
       h1 {
         font-size: 16vw;
-        font-weight: 900;
         margin-left: 24vw;
 
         span  {
@@ -93,9 +89,31 @@
         small {
           font-weight: 400;
           font-size: 40%;
+          margin-left: -10vw;
         }
       }
+      h5 {
+          font-size: 4vw;
+          margin-left: 14vw;
+      }
     }
+  }
+  @media (orientation: landscape) {
+  }
+
+
+  /* Footer
+  ----------------------------------------- */
+  .footer {
+      color: $highlight-color;
+  }
+  @media (orientation: portrait) {
+      .footer {
+          bottom: 3vw;
+          font-size: 3vw;
+          left: 24vw;
+          position: fixed;
+      }
   }
   @media (orientation: landscape) {
   }
