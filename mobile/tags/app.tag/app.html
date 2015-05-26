@@ -69,7 +69,8 @@
       Submit open grill</a>
     <a class="button u-full-width" href="#nearby">
       Open grills nearby</a>
-
+    <a class="button u-full-width" href="#feedback">
+      Give feedback</a>
   </div>
 
 
@@ -149,8 +150,80 @@
   <div class="container" if={page == 'submit'}>
     <h6>Submit open grill</h6>
 
+    <p>Attention: Demo mode. It is not yet possible to submit open grills.
+      However, we want you to know how this would look like. Any feedback is appreciated.</p>
+
+   
+
+    <form onsubmit={ submitGrill }>
+
+      <label>Location</label>
+
+      <p if={sg.newLocation}>
+        New location detected: <br>
+        {location.formattedAddress}
+        <button class="u-full-width" onclick={updateLocation}>Make default</button>
+      </p>
+
+      <input class="u-full-width" type="text" placeholder="Acquiring Location..." id="sg_locationText" readonly required>
+
+      <input class="u-full-width" type="text" placeholder="Acquiring Lat..." id="sg_numLocationLat" readonly required>
+
+      <input class="u-full-width" type="text" placeholder="Acquiring Lng..." id="sg_numLocationLng" readonly required>     
 
 
+      <label for="sg_msg">Description</label>
+      <textarea class="u-full-width" placeholder="We are having …" id="sg_msg"></textarea>
+
+
+      <label for="sg_time">Starting time</label>
+      <input class="u-full-width" type="time" placeholder="" id="sg_time"  required>
+
+      <label>Bring along</label>
+      <label>
+        <input id="sg_flagBringGrillables" type="checkbox">
+        <span>Grillables </span>
+      </label>
+      <label>
+        <input id="sg_flagBringBeverages" type="checkbox">
+        <span>Beverages</span>
+      </label>
+      <label>
+        <input id="sg_flagBringSideDishes" type="checkbox">
+        <span>Side dishes</span>
+      </label>
+
+      <label for="sg_presentHost">Present for one's host</label>
+      <small>Request a small gratitude from your guests</small>
+      <select class="u-full-width" id="sg_presentHost">
+        <option value="surprise">Surprise me</option>
+        <option value="beer">Cold beer</option>
+        <option value="meat">Meat</option>
+        <option value="sides">Side dishes (e.g. salad)</option>
+      </select>
+
+      <label>Special flags</label>
+      <label>
+        <input id="sg_flagSpecialFamiliesWelcome" type="checkbox">
+        <span>Families/ Kids welcomed</span>
+      </label>
+      <label>
+        <input id="sg_flagSpecialVeggie" type="checkbox">
+        <span>Veggie only</span>
+      </label>
+      <label>
+        <input id="sg_flagSpecialNoAlcohol" type="checkbox">
+        <span>No alcohol will be served </span>
+      </label>
+
+
+
+      <label for="nsg_email">Your email</label>
+      <input class="u-full-width" type="email" placeholder="test@mailbox.com" id="sg_email" required>
+    
+      <input class="button-primary u-full-width" type="submit" value="Submit">
+    </form>
+  
    
     <a class="button u-full-width" href="javascript:window.history.back()">
       Back</a>
@@ -167,6 +240,7 @@
   <div class="container" if={page == 'nearby'}>
     <h6>Open grills nearby</h6>
   
+    <p>No open grills available, yet. Please subscribe to get notified via email once an open grill is available nearby or an official event is posted.</p>
    
     <a class="button u-full-width" href="javascript:window.history.back()">
       Back</a>
@@ -192,6 +266,27 @@
 
 
 
+  <div class="container" if={page == 'feedback'}>
+    <h6>Drop us a line</h6>
+    <form onsubmit={ sendFeedback }>
+
+
+
+      <label for="fb_msg">Message</label>
+      <textarea class="u-full-width" placeholder="Hi Dave …" id="fb_msg"></textarea>
+
+      <label for="fb_email">Your email</label>
+      <small>Optional: Only if you would like to receive a reply.</small>
+      <input class="u-full-width" type="email" placeholder="test@mailbox.com" id="fb_email">
+      
+
+      <input class="button-primary u-full-width" type="submit" value="Send">      
+    </form>
+
+    <a class="button u-full-width" href="javascript:window.history.back()">
+      Back</a>    
+  </div>  
+
 
 <!--██╗   ███╗██████╗ ██████╗ ██╗███╗   ██╗████████╗
 ██║████╗ ████║██╔══██╗██╔══██╗██║████╗  ██║╚══██╔══╝
@@ -200,6 +295,8 @@
 ██║██║ ╚═╝ ██║██║     ██║  ██║██║██║ ╚████║   ██║   
 ╚═╝╚═╝     ╚═╝╚═╝     ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝   -->
 
+  <div class="container" if={page == 'imprint'}>
+  </div>  
 
 
 </div>

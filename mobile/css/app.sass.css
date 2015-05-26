@@ -11,7 +11,20 @@ $error-color: red;
           transition: $radius;
 }
 
+/* skeletton overwrite */
+
+.button.button-primary, button.button-primary, input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary {
+  color: #FFF;
+  background-color: $highlight-color;
+  border-color: $highlight-color;
+}
+
+
+
 /*start*/
+
+
+
 
 html {
 }
