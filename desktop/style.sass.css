@@ -1,15 +1,21 @@
 /* SASS Support Available */
 
 
-  $highlight-color: red;
-  $muted-color: grey;
+  $highlight-color: white;
+  $text-inverse: #ff8f14;
+  $muted-color: #dcc094;
+  $important-color: #761602;
+  $text-dark: #0e0f0e;
 
-  /* Get rid of left and right margins*/
-  body {
-    margin:20px 0px;
-    font-family: 'Alegreya', serif;
+  html, body {
+    height: 100%;
   }
-
+  body {
+    background: linear-gradient(145deg, $text-dark, $text-dark 40%, $important-color);
+    color: $text-inverse;
+    font-family: 'Alegreya', serif;
+    margin: 0px;
+  }
 
   h1 {
     color: $highlight-color;
