@@ -4,9 +4,10 @@
   $highlight-color: red;
   $muted-color: grey;
 
-  /*Get rid of left and right margins*/
+  /* Get rid of left and right margins*/
   body {
     margin:20px 0px;
+    font-family: 'Alegreya', serif;
   }
 
 
