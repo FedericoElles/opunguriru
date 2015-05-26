@@ -34,6 +34,22 @@
   }
 
   .bg1 {
-    min-height: 300px;
-    background-image: url(http://www.bestfreejpg.com/wp-content/uploads/2014/10/grill_food_with_big_fire.jpg);
-  }  
+    background: transparent url("../img/fire-bg.svg") no-repeat scroll;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+  @media (orientation: portrait) {
+    .bg1 {
+      background-position: -30vw 40vh;
+      background-size: cover;
+    }
+  }
+  @media (orientation: landscape) {
+    .bg1 {
+      background-position: -30vw 40vh;
+      background-size: cover;
+    }
+  }
