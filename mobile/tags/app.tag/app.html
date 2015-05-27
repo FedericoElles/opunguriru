@@ -58,7 +58,7 @@
 
   <div class="container" if={page == 'main'}>
 
-    <h6>Main menu</h6>
+    <h4>Main menu</h4>
      
     <a class="button u-full-width" href="#notifications">
       Notification settings</a>
@@ -80,7 +80,7 @@
 ╚═╝  ╚═══╝ ╚═════╝    ╚═╝   ╚═╝╚═╝        -->
                                                 
   <div class="container" if={page == 'notifications'}>
-    <h6>Notification settings</h6>
+    <h4>Notification settings</h4>
 
     <form onsubmit={ updateNotifications }>
 
@@ -145,7 +145,7 @@
 ╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝   --> 
                                                 
   <div class="container" if={page == 'submit'}>
-    <h6>Submit open grill</h6>
+    <h4>Submit open grill</h4>
 
     <p>Attention: Demo mode. It is not yet possible to submit open grills.
       However, we want you to know how this would look like. Any feedback is appreciated.</p>
@@ -235,7 +235,7 @@
 ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝    -->
                                                    
   <div class="container" if={page == 'nearby'}>
-    <h6>Open grills nearby</h6>
+    <h4>Open grills nearby</h4>
   
     <p>No open grills available, yet. Please subscribe to get notified via email once an open grill is available nearby or an official event is posted.</p>
    
@@ -254,7 +254,7 @@
 
 
   <div class="container" if={page == 'route2_id'}>
-    <h6>Route 2</h6>
+    <h4>Route 2</h4>
     <p>Parameter id = {params.id}</p>
    
     <a class="button u-full-width" href="javascript:window.history.back()">
@@ -264,7 +264,7 @@
 
 
   <div class="container" if={page == 'feedback'}>
-    <h6>Drop us a line</h6>
+    <h4>Drop us a line</h4>
     <form onsubmit={ submitFeedback }>
 
       <label for="fb_msg">Message</label>
