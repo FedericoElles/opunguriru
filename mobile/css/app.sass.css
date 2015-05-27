@@ -1,5 +1,6 @@
 /* Base Color 
 ----------------------------------------- */
+
 $highlight-color: #FF8F14;
 $darkred: #761602;
 $black: #0e0f0e;
@@ -7,8 +8,10 @@ $white: #FAFAFA;
 $muted-color: grey;
 $error-color: red;
 
+
 /* Mixins
 ----------------------------------------- */
+
 @mixin transition($radius) {
     -webkit-transition: $radius;
     -moz-transition: $radius;
@@ -40,9 +43,11 @@ $toColor) {
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
 }
 
+
 /* skeletton overwrite 
 ----------------------------------------- */
 /* button */
+
 .button.button-primary,
 button.button-primary,
 input[type="submit"].button-primary,
@@ -51,11 +56,11 @@ input[type="button"].button-primary {
     color: $black;
     background-color: $highlight-color;
     border: none;
-    
     &:hover {
-        background-color: $highlight-color;    
+        background-color: $highlight-color;
     }
 }
+
 .button,
 button,
 input[type="submit"],
@@ -68,6 +73,7 @@ input[type="button"] {
     font-weight: 700;
     text-transform: none;
 }
+
 @media (orientation: portrait) {
     .button,
     button,
@@ -79,6 +85,7 @@ input[type="button"] {
         line-height: 15vw;
     }
 }
+
 @media (orientation: landscape) {
     .button,
     button,
@@ -90,6 +97,7 @@ input[type="button"] {
         line-height: 7.5vw;
     }
 }
+
 .btn-back {
     background-color: transparent;
     border: none;
@@ -101,6 +109,7 @@ input[type="button"] {
     top: 0;
     z-index: 3;
 }
+
 @media (orientation: portrait) {
     .btn-back {
         font-size: 14vw;
@@ -109,6 +118,7 @@ input[type="button"] {
         width: 20vw;
     }
 }
+
 @media (orientation: landscape) {
     .btn-back {
         font-size: 7vw;
@@ -117,6 +127,7 @@ input[type="button"] {
         width: 10vw;
     }
 }
+
 select,
 input[type="email"],
 input[type="number"],
@@ -129,14 +140,22 @@ textarea {
     background-color: rgba(0, 0, 0, 0.3);
     color: $white;
     border: none;
-    
     &:focus {
         border: none;
     }
 }
 
+@media (orientation: landscape) {
+    .container {
+        margin-left: 24vw;
+        width: 60vw;
+    }
+}
+
+
 /* Layout 
 ----------------------------------------- */
+
 .bg-gradient {
     background-color: $darkred;
     @include linear-gradient($darkred, $black);
@@ -154,16 +173,19 @@ body {
     font-weight: 300;
     color: $white;
 }
+
 @media (orientation: portrait) {
-    body {   
+    body {
         padding-top: 26vw;
     }
 }
+
 @media (orientation: landscape) {
-    body {   
+    body {
         padding-top: 13vw;
     }
 }
+
 muted {
     color: $muted-color;
 }
@@ -186,6 +208,7 @@ muted {
         font-size: 7vw;
     }
 }
+
 @media (orientation: landscape) {
     #header {
         height: 10vw;
@@ -196,7 +219,7 @@ muted {
         svg {
             width: 8vw;
             margin-top: 1vw;
-            margin-left: 11vw;
+            margin-left: 24vw;
         }
     }
     h4 {
@@ -218,12 +241,33 @@ muted {
         margin-bottom: 0;
     }
 }
+
+/* background fire */
+#red-yellow {
+    position: fixed;
+    left: -50%;
+    bottom: -10%;
+    z-index: -1;
+}
+
+@media (orientation: portrait) {
+    #red-yellow {
+        width: 100%;
+    }
+}
+@media (orientation: landscape) {
+    #red-yellow {
+        width: 80%;
+    }
+}
+
 /* footer */
 .footer {
     text-align: center;
     font-size: 70%;
     color: $muted-color;
 }
+
 
 /* Fonts
 ----------------------------------------- */
@@ -261,13 +305,4 @@ hr.small {
 
 .no-wrap {
     white-space: nowrap;
-}
-/* background fire */
-
-#red-yellow {
-    width: 100%;
-    position: fixed;
-    left: -50%;
-    bottom: -10%;
-    z-index: -1;
 }
