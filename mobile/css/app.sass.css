@@ -57,6 +57,7 @@ input[type="button"] {
     border: 1px solid $black;
 }
 .btn-back {
+    background-color: transparent;
     border: none;
     color: $white;
     font-family: 'Alegreya SC', serif;
@@ -85,10 +86,15 @@ textarea {
 }
 /*start*/
 
-html {
+.bg-gradient {
     background-color: $darkred;
     @include linear-gradient($darkred, $black);
-    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
 }
 
 body {
