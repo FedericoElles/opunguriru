@@ -23,7 +23,8 @@
   var api = new Api(ls);
   var helper = new RiotHelper();
   
-
+  //hide splash
+  document.getElementById('splashscreen').style.display = 'none';
 
 
   //load data from server
@@ -167,6 +168,11 @@
     updateGeo(); //console.log('focused');
   }
   updateGeo();
+
+
+  self.goToMain = function(){
+    location.hash = 'main';
+  }
 
 
 

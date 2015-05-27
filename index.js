@@ -24,7 +24,7 @@ simplePostgres.setUrl(process.env.DATABASE_URL ||
 var app = express();
 var localhost = process.env.PORT ? false : true; //heroku specific
 var STATIC = {
-  version: '0.0.2',
+  version: '0.0.3',
   OK: {status: 'OK'},
   fail: function(msg){
     return {status: 'ERROR', reason: msg};
@@ -177,7 +177,7 @@ app.get('/', function(req, res) {
       '/mobile/libs/geo.js',
       '/mobile/libs/api.js',
       '/mobile/libs/ls.js',
-      '/mobile/libs/ls.riothelper',
+      '/mobile/libs/riothelper.js',
       //custom
       '/mobile/tags/app.js',
       //reusable      

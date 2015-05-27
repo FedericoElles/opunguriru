@@ -2,6 +2,7 @@
 
 $highlight-color: #FF8F14;
 $darkred: #761602;
+$lightred: #842D1B;
 $black: #0e0f0e;
 $white: #FAFAFA;
 
@@ -33,7 +34,7 @@ $error-color: red;
 .button.button-primary, button.button-primary, input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary {
   color: #FFF;
   background-color: $highlight-color;
-  border-color: $highlight-color;
+  border-color: $darkred;
   border: 1px solid $black;
 }
 
@@ -43,22 +44,29 @@ $error-color: red;
   border: 1px solid $black;
 }
 
-select, input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea {
-  background-color: $darkred;
+select, input[type="email"], input[type="time"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea {
+  background-color: $lightred;
   color: $white;
-  border: 1px solid $black;
+  border: 1px solid $darkred;
+}
+
+/* splashscreen */
+
+#splashscreen{
+  h3 {
+    color: $highlight-color;
+    line-height: 73px;
+    
+  }
 }
 
 
 /*start*/
 
-
-
-
 html {
   background-color: $darkred; 
   @include linear-gradient($darkred, $black);
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
@@ -117,6 +125,18 @@ h6 {
 }
 
 
+/* 50% container */
+.height-50{
+  min-height: 50vh;
+}
+
+
+/* form background for increased visibility*/
+
+form {
+  background-color: rgba(118,22,2,0.8);
+  padding:10px;
+}
 
 /* footer */
 
@@ -137,6 +157,10 @@ h6 {
   background-color: rgba(118,22,2,0.8);
   padding:10px;
   color: $highlight-color;
+
+  .container{
+    height:50px;
+  }
 
   h1 {
     display: inline-block;
