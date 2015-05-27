@@ -56,7 +56,20 @@ input[type="button"] {
     color: $white;
     border: 1px solid $black;
 }
-
+.btn-back {
+    border: none;
+    color: $white;
+    font-family: 'Alegreya SC', serif;
+    font-weight: bold;
+    font-size: 14vw;
+    height: 20vw;
+    line-height: 18vw;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 20vw;
+    z-index: 3;
+}
 select,
 input[type="email"],
 input[type="number"],
