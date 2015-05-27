@@ -41,10 +41,13 @@ button.button-primary,
 input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
-    color: #FFF;
+    color: $black;
     background-color: $highlight-color;
-    border-color: $highlight-color;
-    border: 1px solid $black;
+    border: none;
+    
+    &:hover {
+        background-color: $highlight-color;    
+    }
 }
 
 .button,
@@ -86,9 +89,13 @@ input[type="tel"],
 input[type="url"],
 input[type="password"],
 textarea {
-    background-color: $darkred;
+    background-color: rgba(0, 0, 0, 0.3);
     color: $white;
-    border: 1px solid $black;
+    border: none;
+    
+    &:focus {
+        border: none;
+    }
 }
 /*start*/
 
