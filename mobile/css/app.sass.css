@@ -31,6 +31,60 @@ $error-color: red;
 
 /* skeletton overwrite */
 
+a {
+  color: $muted-color;
+  text-decoration: none;
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+  color: #333;
+  border-color: $highlight-color;
+  outline: 0; }
+.button.button-primary,
+button.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
+  color: #FFF;
+  background-color: $highlight-color;
+  border-color: $highlight-color; }
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type="submit"].button-primary:focus,
+input[type="reset"].button-primary:focus,
+input[type="button"].button-primary:focus {
+  color: #FFF;
+  background-color: $highlight-color;
+  border-color: $highlight-color; }
+
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid $highlight-color;
+  outline: 0; 
+}
+
+
 .button.button-primary, button.button-primary, input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary {
   color: #FFF;
   background-color: $highlight-color;
@@ -56,7 +110,7 @@ select, input[type="email"], input[type="time"], input[type="number"], input[typ
   h3 {
     color: $highlight-color;
     line-height: 73px;
-    
+
   }
 }
 
@@ -174,3 +228,11 @@ form {
     width: 50px;
   }
 }
+
+
+  /*  imprint */
+  .a1::before{content:'asnia';}
+  .a2::before{content:'8';}
+  .a3::before{content:'625';}
+  .a4::before{content:'18087';}
+  .a5::before{content:'furikuri';}

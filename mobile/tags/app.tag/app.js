@@ -218,6 +218,7 @@
     console.log('Submitting JSON', json);
     api.postJSON('subscribe', json, function(data){
       console.log('result', data);
+      location.hash='notifications-success';
     });
   }
 
