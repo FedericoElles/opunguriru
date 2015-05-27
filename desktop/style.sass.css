@@ -11,6 +11,16 @@
   $text-dark: #0e0f0e;
 
 
+  /* Skeleton Layout
+  ----------------------------------------- */
+
+  a {
+    color: $muted-color;
+    text-decoration: none;
+  }
+
+
+
   /* Main Layout
   ----------------------------------------- */
   html, body {
@@ -72,6 +82,10 @@
       font-style: italic;
       font-weight: 400;
     }
+
+    li {
+      margin-left: 14vw;
+    }
   }
   @media (orientation: portrait) {
     .og-logo {
@@ -132,8 +146,29 @@
   /* Screenshot
   ----------------------------------------- */
   #mobile-screenshot{
-    width: 300px;
+    display: none;
+    position: fixed;    
+    top:100px;
+    width: 30%;
+    max-width: 400px;      
   }
+
+
+
+  @media (min-width: 600px){
+    #mobile-screenshot{
+      display: block;
+      right:0%;
+    }
+  }
+
+  @media (min-width: 1200px){
+    #mobile-screenshot{
+      display: block;
+      left:50%;
+    }
+  }
+
 
   /* Footer
   ----------------------------------------- */
