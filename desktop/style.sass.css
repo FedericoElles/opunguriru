@@ -132,6 +132,7 @@ h1 {
 }
 
 
+<<<<<<< HEAD
 /* Footer
 ----------------------------------------- */
 
@@ -157,6 +158,39 @@ h1 {
         left: 24vh;
         position: fixed;
         span {
+=======
+
+  /* Screenshot
+  ----------------------------------------- */
+  #mobile-screenshot{
+    width: 300px;
+  }
+
+  /* Footer
+  ----------------------------------------- */
+  .footer {
+      color: $muted-color;
+      font-size: 10px;
+  }
+  @media (orientation: portrait) {
+      .footer {
+          bottom: 3vw;
+          left: 24vw;
+          position: fixed;
+          
+          span {
+              display: block;
+          }
+      }
+  }
+  @media (orientation: landscape) {
+      .footer {
+          bottom: 3vh;
+          left: 24vh;
+          position: fixed;
+          
+          span {
+>>>>>>> master
             display: inline-block;
             margin-right: 32px;
         }
