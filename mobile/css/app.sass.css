@@ -1,9 +1,14 @@
+/* Base Color 
+----------------------------------------- */
 $highlight-color: #FF8F14;
 $darkred: #761602;
 $black: #0e0f0e;
 $white: #FAFAFA;
 $muted-color: grey;
 $error-color: red;
+
+/* Mixins
+----------------------------------------- */
 @mixin transition($radius) {
     -webkit-transition: $radius;
     -moz-transition: $radius;
@@ -34,8 +39,10 @@ $toColor) {
     background-image: linear-gradient(top, $fromColor, $toColor);
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
 }
-/* skeletton overwrite */
 
+/* skeletton overwrite 
+----------------------------------------- */
+/* button */
 .button.button-primary,
 button.button-primary,
 input[type="submit"].button-primary,
@@ -49,7 +56,6 @@ input[type="button"].button-primary {
         background-color: $highlight-color;    
     }
 }
-
 .button,
 button,
 input[type="submit"],
@@ -59,11 +65,30 @@ input[type="button"] {
     border: 1px solid $highlight-color;
     color: $highlight-color;
     font-family: 'Alegreya SC', serif;
-    font-size: 5vw;
     font-weight: 700;
-    height: 16vw;
-    line-height: 15vw;
     text-transform: none;
+}
+@media (orientation: portrait) {
+    .button,
+    button,
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"] {
+        font-size: 5vw;
+        height: 16vw;
+        line-height: 15vw;
+    }
+}
+@media (orientation: landscape) {
+    .button,
+    button,
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"] {
+        font-size: 2.5vw;
+        height: 8vw;
+        line-height: 7.5vw;
+    }
 }
 .btn-back {
     background-color: transparent;
@@ -71,14 +96,26 @@ input[type="button"] {
     color: $white;
     font-family: 'Alegreya SC', serif;
     font-weight: bold;
-    font-size: 14vw;
-    height: 20vw;
-    line-height: 18vw;
     position: fixed;
     left: 0;
     top: 0;
-    width: 20vw;
     z-index: 3;
+}
+@media (orientation: portrait) {
+    .btn-back {
+        font-size: 14vw;
+        height: 20vw;
+        line-height: 18vw;
+        width: 20vw;
+    }
+}
+@media (orientation: landscape) {
+    .btn-back {
+        font-size: 7vw;
+        height: 10vw;
+        line-height: 9vw;
+        width: 10vw;
+    }
 }
 select,
 input[type="email"],
@@ -97,8 +134,9 @@ textarea {
         border: none;
     }
 }
-/*start*/
 
+/* Layout 
+----------------------------------------- */
 .bg-gradient {
     background-color: $darkred;
     @include linear-gradient($darkred, $black);
@@ -114,14 +152,81 @@ body {
     font-family: 'Roboto', 'Helvetica Neue', 'Segoe UI' sans-serif;
     font-style: normal;
     font-weight: 300;
-    padding-top: 26vw;
     color: $white;
 }
-
+@media (orientation: portrait) {
+    body {   
+        padding-top: 26vw;
+    }
+}
+@media (orientation: landscape) {
+    body {   
+        padding-top: 13vw;
+    }
+}
 muted {
     color: $muted-color;
 }
+/* header */
 
+@media (orientation: portrait) {
+    #header {
+        height: 20vw;
+        h1 {
+            line-height: 5vw;
+            font-size: 8vw;
+        }
+        svg {
+            width: 16vw;
+            margin-top: 2vw;
+            margin-left: 22vw;
+        }
+    }
+    h4 {
+        font-size: 7vw;
+    }
+}
+@media (orientation: landscape) {
+    #header {
+        height: 10vw;
+        h1 {
+            line-height: 2.5vw;
+            font-size: 4vw;
+        }
+        svg {
+            width: 8vw;
+            margin-top: 1vw;
+            margin-left: 11vw;
+        }
+    }
+    h4 {
+        font-size: 3.5vw;
+    }
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: rgba(118, 22, 2, 0.8);
+    padding: 0;
+    color: $highlight-color;
+    h1 {
+        display: inline-block;
+        margin-bottom: 0;
+    }
+}
+/* footer */
+.footer {
+    text-align: center;
+    font-size: 70%;
+    color: $muted-color;
+}
+
+/* Fonts
+----------------------------------------- */
 h1,
 h4 {
     color: $highlight-color;
@@ -165,45 +270,4 @@ hr.small {
     left: -50%;
     bottom: -10%;
     z-index: -1;
-}
-/* footer */
-
-.footer {
-    text-align: center;
-    font-size: 70%;
-    color: $muted-color;
-}
-/* header */
-
-@media (orientation: portrait) {
-    #header {
-        height: 20vw;
-        h1 {
-            line-height: 5vw;
-            font-size: 8vw;
-        }
-        svg {
-            width: 16vw;
-            margin-top: 2vw;
-            margin-left: 22vw;
-        }
-    }
-    h4 {
-        font-size: 7vw;
-    }
-}
-
-#header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
-    background-color: rgba(118, 22, 2, 0.8);
-    padding: 0;
-    color: $highlight-color;
-    h1 {
-        display: inline-block;
-        margin-bottom: 0;
-    }
 }
