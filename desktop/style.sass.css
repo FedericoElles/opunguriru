@@ -68,9 +68,6 @@ h1 {
         font-style: italic;
         font-weight: 400;
     }
-    li {
-        margin-left: 14vw;
-    }
 }
 
 @media (orientation: portrait) {
@@ -95,6 +92,11 @@ h1 {
         h5 {
             font-size: 4vw;
             margin-left: 14vw;
+            margin-top: 3vw;
+        }
+        li {
+            margin-left: 14vw;
+            font-size: 3vw;
         }
     }
 }
@@ -122,6 +124,10 @@ h1 {
             font-size: 4vh;
             margin-left: 20vh;
             margin-top: 3vh;
+        }
+        li {
+            margin-left: 20vh;
+            font-size: 3vh;
         }
     }
 }
