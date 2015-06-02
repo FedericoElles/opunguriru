@@ -55,8 +55,9 @@ h1 {
 .og-logo {
     
     background: transparent url("../img/og-logo_yellow.svg") no-repeat scroll;
-    background-position: 0 24vh;
-    padding-top: 24vh;
+    background-position: 0 18vh;
+    padding-top: 18vh;
+    
     h1 {
         color: $text-highlight;
         font-family: 'Alegreya SC', serif;
@@ -104,13 +105,13 @@ h1 {
 @media (orientation: landscape) {
     .og-logo {
         background-size: 20vh 20vh;
-        height: 30vh;
-        margin-left: 24vh;
-        width: 80vh;
+        margin-left: 20vh;
+        width: 70vh;
         
         h1 {
-            font-size: 16vh;
-            margin-left: 24vh;
+            font-size: 14vh;
+            margin-left: 20vh;
+            margin-top: 7vh;
             span {
                 margin-left: -4vh;
             }
@@ -121,13 +122,12 @@ h1 {
             }
         }
         h5 {
-            font-size: 4vh;
+            font-size: 3.5vh;
             margin-left: 20vh;
             margin-top: 3vh;
         }
-        li {
-            margin-left: 20vh;
-            font-size: 3vh;
+        p {
+            padding-left: 20vh;
         }
     }
 }
