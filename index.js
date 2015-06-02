@@ -146,6 +146,20 @@ app.post('/api/feedback', rateSubscribe, function(req, res) {
   });
 });
 
+//API COUNT REGISTERED USERS
+app.get('/api/stats', function (req, res) {
+  simplePostgres.promiseQuery('SELECT * FROM subscriptions_staging', []).then(function (data) {
+    var uniqueEmails = {},
+        recData;
+    data.forEach(function(rec){
+      recData = JSON.parse(rec.data);
+      uniqueEmails[rec.email] = recData.locationText;
+    });
+    var r = uniqueEmails;
+    res.send(r);
+  });
+});
+
 
 /*█████╗████████╗ █████╗ ████████╗██╗ ██████╗
 ██╔════╝╚══██╔══╝██╔══██╗╚══██╔══╝██║██╔════╝
@@ -166,6 +180,7 @@ allinc.addFolder('desktop', {
 
 
 app.get('/', function(req, res) {
+  res.setHeader('Vary', 'User-Agent');
   if (!req.useragent.isMobile && !req._app){
     //static landing page
     allinc.desktop.serve(req, res, {});
