@@ -150,12 +150,37 @@ app.post('/api/feedback', rateSubscribe, function(req, res) {
 app.get('/api/stats', function (req, res) {
   simplePostgres.promiseQuery('SELECT * FROM subscriptions_staging', []).then(function (data) {
     var uniqueEmails = {},
-        recData;
+        countCities = {},
+        counts = [],
+        recData,
+        cityParts,
+        city;
     data.forEach(function(rec){
       recData = JSON.parse(rec.data);
       uniqueEmails[rec.email] = recData.locationText;
     });
-    var r = uniqueEmails;
+    for (var x in uniqueEmails){
+      cityParts = uniqueEmails[x].split(', ');
+      if (cityParts.length > 1) {
+        city = cityParts[1].split(' ').pop();
+        if (typeof countCities[city] === 'undefined'){
+          countCities[city] = 1;
+        } else {
+          countCities[city] += 1;
+        }
+      }
+    }
+    //TODO: Sort Array
+    for (var y in countCities){
+      counts.push({
+        city: y,
+        amount: countCities[y]
+      });
+    }
+    counts = counts.sort(function (a, b) {
+      return a.amount > b.amount ? 0 : 1;
+    });
+    var r = counts;
     res.send(r);
   });
 });
