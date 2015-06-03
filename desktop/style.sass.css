@@ -106,7 +106,7 @@ h1 {
     .og-logo {
         background-size: 20vh 20vh;
         margin-left: 20vh;
-        width: 70vh;
+        width: 64vh;
         
         h1 {
             font-size: 14vh;
@@ -127,6 +127,7 @@ h1 {
             margin-top: 3vh;
         }
         p {
+            font-size: 2vh;
             padding-left: 20vh;
         }
     }
